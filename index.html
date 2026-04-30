@@ -3,59 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <title>البطالة في المجتمع السعودي</title>
+
+<!-- خط جميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- مكتبة الرسوم البيانية -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
     body {
         font-family: "Cairo", sans-serif;
-        background: #f7f7f7;
+        background: #f5f7fa;
         margin: 0;
         padding: 0;
-        line-height: 1.8;
         color: #333;
     }
     header {
-        background: #004aad;
+        background: linear-gradient(90deg, #004aad, #007bff);
         color: white;
-        padding: 40px;
+        padding: 45px;
         text-align: center;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
     }
     .section {
-        padding: 40px;
         background: white;
-        margin: 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 10px #ddd;
-    }
-    .section img {
-        width: 260px;
-        display: block;
-        margin: 20px auto;
+        margin: 25px;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
     h2 {
         color: #004aad;
         font-size: 26px;
         margin-bottom: 10px;
+        font-weight: 700;
     }
-    .numbers {
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
+    .section img {
+        width: 300px;
+        display: block;
+        margin: 20px auto;
+    }
+    ul li {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    canvas {
         margin-top: 20px;
-    }
-    .num-box {
-        background: #eef4ff;
-        padding: 20px;
-        border-radius: 10px;
-        width: 30%;
-        font-size: 22px;
-        font-weight: bold;
-        color: #004aad;
     }
     footer {
         text-align: center;
-        padding: 30px;
+        padding: 25px;
         color: #666;
+        margin-top: 40px;
     }
 </style>
 </head>
@@ -63,30 +65,64 @@
 <body>
 
 <header>
-البطالة في المجتمع السعودي — قراءة سكانية
+البطالة في المجتمع السعودي — تحليل وبيانات
 </header>
 
 <div class="section">
     <h2>مقدمة</h2>
     <p>
-        تُعد البطالة أحد أبرز التحديات السكانية في المملكة العربية السعودية، حيث ترتبط بشكل مباشر بمهارات الشباب،
-        وتغيرات سوق العمل، والتحول الاقتصادي الوطني. تهدف هذه القراءة إلى توضيح واقع البطالة، وأسبابها، والفرص المستقبلية
-        للحد منها في ضوء رؤية 2030.
+        تُعد البطالة أحد أبرز التحديات السكانية في المملكة العربية السعودية، حيث ترتبط بمهارات الشباب،
+        وتغيرات سوق العمل، والتحول الاقتصادي الوطني. يعرض هذا التقرير أهم المؤشرات والرسوم البيانية
+        لفهم واقع البطالة في المملكة.
     </p>
 
-    <img src="https://storyset.com/illustration/job-hunt/rafiki" alt="Flat Illustration">
+    <img src="https://storyset.com/illustration/job-hunt/rafiki" alt="Job Illustration">
 </div>
 
 <div class="section">
-    <h2>مؤشرات رئيسية</h2>
+    <h2>معدل البطالة العام</h2>
+    <p>الرسم البياني التالي يوضح معدل البطالة العام في المملكة:</p>
 
-    <div class="numbers">
-        <div class="num-box">7.7%<br>معدل البطالة</div>
-        <div class="num-box">13.7%<br>بطالة الإناث</div>
-        <div class="num-box">16.3%<br>بطالة الشباب</div>
-    </div>
+    <canvas id="chart1"></canvas>
 
-    <img src="https://storyset.com/illustration/statistics/rafiki" alt="Statistics Illustration">
+    <script>
+        new Chart(document.getElementById("chart1"), {
+            type: "bar",
+            data: {
+                labels: ["معدل البطالة"],
+                datasets: [{
+                    label: "النسبة %",
+                    data: [7.7],
+                    backgroundColor: "#007bff"
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</div>
+
+<div class="section">
+    <h2>مقارنة البطالة بين الذكور والإناث</h2>
+    <p>الرسم التالي يوضح الفرق بين الجنسين:</p>
+
+    <canvas id="chart2"></canvas>
+
+    <script>
+        new Chart(document.getElementById("chart2"), {
+            type: "pie",
+            data: {
+                labels: ["ذكور", "إناث"],
+                datasets: [{
+                    data: [4.8, 13.7],
+                    backgroundColor: ["#004aad", "#ff6b81"]
+                }]
+            }
+        });
+    </script>
 </div>
 
 <div class="section">
@@ -113,16 +149,6 @@
     </ul>
 
     <img src="https://storyset.com/illustration/goal/rafiki" alt="Goal Illustration">
-</div>
-
-<div class="section">
-    <h2>النظرة المستقبلية</h2>
-    <p>
-        تشير المؤشرات الحديثة إلى تحسن مستمر في سوق العمل، مدفوعًا ببرامج التدريب، ودعم التوظيف، وتنوع القطاعات الاقتصادية.
-        ومع توسع الفرص في المجالات التقنية واللوجستية والصحية، يتجه سوق العمل نحو مهارات جديدة تتطلب استعدادًا أكبر من الشباب.
-    </p>
-
-    <img src="https://storyset.com/illustration/growth/rafiki" alt="Growth Illustration">
 </div>
 
 <footer>
