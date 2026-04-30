@@ -56,6 +56,33 @@
         font-size: 18px;
     }
 
+    .numbers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .num-box {
+        background: #eef4ff;
+        padding: 15px 20px;
+        border-radius: 12px;
+        min-width: 140px;
+        text-align: center;
+    }
+
+    .num-box .value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #004aad;
+    }
+
+    .num-box .label {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+
     canvas {
         max-width: 260px;
         margin: 0 auto;
@@ -86,6 +113,30 @@
 
     <div class="img-box">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Job Illustration">
+    </div>
+</div>
+
+<div class="section">
+    <h2>أهم الأرقام والمؤشرات</h2>
+    <p>يوضح هذا القسم أبرز نسب البطالة في المملكة:</p>
+
+    <div class="numbers">
+        <div class="num-box">
+            <div class="value">7.7٪</div>
+            <div class="label">معدل البطالة العام</div>
+        </div>
+        <div class="num-box">
+            <div class="value">13.7٪</div>
+            <div class="label">بطالة الإناث</div>
+        </div>
+        <div class="num-box">
+            <div class="value">4.8٪</div>
+            <div class="label">بطالة الذكور</div>
+        </div>
+        <div class="num-box">
+            <div class="value">16.3٪</div>
+            <div class="label">بطالة الشباب</div>
+        </div>
     </div>
 </div>
 
