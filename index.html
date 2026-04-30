@@ -89,6 +89,24 @@
         display: block;
     }
 
+    .chart-numbers {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .chart-numbers .male {
+        color: #004aad;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .chart-numbers .female {
+        color: #ff6b81;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
     footer {
         text-align: center;
         padding: 25px;
@@ -145,6 +163,7 @@
 <!-- الرسم الأول -->
 <div class="section">
     <h2>معدل البطالة العام</h2>
+
     <canvas id="chart1"></canvas>
 
     <script>
@@ -165,11 +184,17 @@
             }
         });
     </script>
+
+    <div class="chart-numbers">
+        <div style="font-size:20px; font-weight:700; color:#007bff;">7.7٪</div>
+        <div>معدل البطالة العام</div>
+    </div>
 </div>
 
 <!-- الرسم الثاني -->
 <div class="section">
     <h2>مقارنة البطالة بين الذكور والإناث</h2>
+
     <canvas id="chart2"></canvas>
 
     <script>
@@ -184,6 +209,16 @@
             }
         });
     </script>
+
+    <div class="chart-numbers">
+        <div class="male">4.8٪</div>
+        <div>نسبة بطالة الذكور</div>
+
+        <br>
+
+        <div class="female">13.7٪</div>
+        <div>نسبة بطالة الإناث</div>
+    </div>
 </div>
 
 <!-- الوظائف الأكثر طلبًا -->
