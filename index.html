@@ -4,66 +4,68 @@
 <meta charset="UTF-8">
 <title>البطالة في المجتمع السعودي</title>
 
-<!-- خط جميل -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- مكتبة الرسوم البيانية -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
     body {
         font-family: "Cairo", sans-serif;
-        background: #f5f7fa;
+        background: #f4f6fa;
         margin: 0;
         padding: 0;
         color: #333;
     }
+
     header {
-        background: linear-gradient(90deg, #004aad, #007bff);
+        background: linear-gradient(90deg, #0051a8, #007bff);
         color: white;
-        padding: 45px;
+        padding: 45px 20px;
         text-align: center;
         font-size: 30px;
         font-weight: bold;
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
     }
+
     .section {
         background: white;
         margin: 25px;
-        padding: 35px;
+        padding: 30px;
         border-radius: 18px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
+
     h2 {
-        color: #004aad;
-        font-size: 26px;
+        color: #0051a8;
+        font-size: 24px;
         margin-bottom: 10px;
         font-weight: 700;
     }
+
     .section img {
-        width: 300px;
+        width: 260px;
         display: block;
         margin: 20px auto;
     }
+
     ul li {
         margin: 10px 0;
         font-size: 18px;
     }
+
+    /* تصغير الرسوم البيانية */
     canvas {
-        margin-top: 20px;
+        max-width: 260px;
+        margin: 0 auto;
+        display: block;
     }
+
     footer {
         text-align: center;
         padding: 25px;
         color: #666;
         margin-top: 40px;
-    }canvas {
-    max-width: 300px;
-    margin: 0 auto;
-    display: block;
-}
-
+    }
 </style>
 </head>
 
@@ -98,13 +100,13 @@
                 datasets: [{
                     label: "النسبة %",
                     data: [7.7],
-                    backgroundColor: "#007bff"
+                    backgroundColor: "#007bff",
+                    borderRadius: 10
                 }]
             },
             options: {
-                scales: {
-                    y: { beginAtZero: true }
-                }
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
             }
         });
     </script>
@@ -118,12 +120,12 @@
 
     <script>
         new Chart(document.getElementById("chart2"), {
-            type: "pie",
+            type: "doughnut",
             data: {
                 labels: ["ذكور", "إناث"],
                 datasets: [{
                     data: [4.8, 13.7],
-                    backgroundColor: ["#004aad", "#ff6b81"]
+                    backgroundColor: ["#0051a8", "#ff6b81"]
                 }]
             }
         });
